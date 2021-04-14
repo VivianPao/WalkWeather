@@ -13,8 +13,9 @@ import io.reactivex.schedulers.Schedulers
 
 class WeatherViewModel: ViewModel() {
 
+    val temperature = MutableLiveData<Int>()
+
     private val weatherService = WeatherService()
-    private val temperature = MutableLiveData<Int>()
     private val disposable = CompositeDisposable()
     // Composite disposable helps with managing resources. Is the stream/ link between the emitter
     // and observer and is meant to be short lived. After we get our needed data, we should stop
